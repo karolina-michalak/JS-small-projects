@@ -93,6 +93,11 @@ clearTasks = () => {
     while(taskList.firstChild){
         taskList.removeChild(taskList.firstChild)
     }
+    clearTasksFromLS()
+}
+
+clearTasksFromLS = () => {
+    localStorage.clear()
 }
 
 filterTasks = e => {
