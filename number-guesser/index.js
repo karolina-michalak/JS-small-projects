@@ -13,6 +13,12 @@ const message = document.querySelector('.message')
 minNum.textContent = min;
 maxNum.textContent = max;
 
+game.addEventListener('mousedown', function(e){
+    if(e.target.className === 'play-again'){
+        window.location.reload()
+    }
+})
+
 btn.addEventListener('click', function(){
     let guess = parseInt(input.value)
     if(isNaN(guess) || guess < min || guess > max){
@@ -39,6 +45,9 @@ gameOver = (won, msg) => {
     input.style.borderColor = color
     message.style.color = color
     setMessage(msg)
+
+    btn.value = 'play again' 
+    btn.className += 'play-again'
 }
 
 setMessage = (msg, color) => {
