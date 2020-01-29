@@ -19,15 +19,11 @@ btn.addEventListener('click', function(){
         setMessage(`Please enter a number between ${min} and ${max}`, `red`)
     }
     if(guess === winningNum){
-        input.disabled = true
-        input.style.borderColor = 'green'
-        setMessage(`${winningNum} is correct`, `green`)
+        gameOver(true, `${winningNum} is correct.`)
     } else {
         guessesLeft -= 1
         if(guessesLeft === 0){
-            input.disabled = true
-            input.style.borderColor = 'red'
-            setMessage(`Game over, you lost. The correct number was ${winningNum}`, `red`)
+            gameOver(false, `Game over, you lost. The correct number was ${winningNum}`)
         } else {
             input.style.borderColor = 'red'
             input.value = ''
@@ -35,6 +31,14 @@ btn.addEventListener('click', function(){
         }
     }
 })
+
+gameOver = (won, msg) => {
+    let color;
+    won === true ? color = 'green' : color = 'red'
+    input.disabled = true
+    input.style.borderColor = color
+    setMessage(msg)
+}
 
 setMessage = (msg, color) => {
     message.style.color = color
