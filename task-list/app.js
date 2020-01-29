@@ -25,10 +25,23 @@ addTask = e => {
         link.innerHTML = '<i class="fa fa-remove"></i>'
         li.appendChild(link)
         taskList.appendChild(li)
+        storeTaskInLS(taskInput.value)
         taskInput.value = ''
         e.preventDefault()
     }
+    function storeTaskInLS(task){
+        let tasks;
+        if(localStorage.getItem('tasks') === null){
+            tasks = []
+        } else {
+            tasks = JSON.parse(localStorage.getItem('tasks'))
+        }
+        tasks.push(task)
+        localStorage.setItem('tasks', JSON.stringify(tasks))
+    }
 }
+
+
 
 // remove() removes element from DOM
 removeTask = e => {
