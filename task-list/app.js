@@ -6,13 +6,12 @@ const taskInput = document.querySelector('#task')
 
 // load all event listeners
 function loadEventListeners(){
-    // add task event
     form.addEventListener('submit', addTask)
-    //removing task
     taskList.addEventListener('click', removeTask)
+    clearBtn.addEventListener('click', clearTasks)
 }
 
-function addTask(e){
+addTask = e => {
     if(taskInput.value === ''){
         alert('type task')
     }
@@ -30,9 +29,17 @@ function addTask(e){
     }
 }
 
+// remove() removes element from DOM
 removeTask = e => {
     if(e.target.parentElement.classList.contains('delete-item')){
         e.target.parentElement.parentElement.remove()
+    }
+}
+
+clearTasks = () => {
+    // taskList.innerHTML = ''
+    while(taskList.firstChild){
+        taskList.removeChild(taskList.firstChild)
     }
 }
 
