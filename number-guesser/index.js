@@ -37,6 +37,7 @@ gameOver = (won, msg) => {
     won === true ? color = 'green' : color = 'red'
     input.disabled = true
     input.style.borderColor = color
+    message.style.color = color
     setMessage(msg)
 }
 
