@@ -1,6 +1,6 @@
 let min = 1;
 let max = 10;
-let winningNum = 2;
+let winningNum = getRandomNum(min, max);
 let guessesLeft = 3;
 
 const game = document.getElementById('game');
@@ -48,6 +48,10 @@ gameOver = (won, msg) => {
 
     btn.value = 'play again' 
     btn.className += 'play-again'
+}
+
+function getRandomNum(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 setMessage = (msg, color) => {
