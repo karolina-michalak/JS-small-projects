@@ -23,7 +23,16 @@ btn.addEventListener('click', function(){
         input.style.borderColor = 'green'
         setMessage(`${winningNum} is correct`, `green`)
     } else {
-
+        guessesLeft -= 1
+        if(guessesLeft === 0){
+            input.disabled = true
+            input.style.borderColor = 'red'
+            setMessage(`Game over, you lost. The correct number was ${winningNum}`, `red`)
+        } else {
+            input.style.borderColor = 'red'
+            input.value = ''
+            setMessage(`${guess} is not correct, ${guessesLeft} guesses left.`, 'red')
+        }
     }
 })
 
