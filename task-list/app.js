@@ -4,8 +4,12 @@ const clearBtn = document.querySelector('.clear-tasks')
 const filter = document.querySelector('#filter')
 const taskInput = document.querySelector('#task')
 
+// load all event listeners
 function loadEventListeners(){
+    // add task event
     form.addEventListener('submit', addTask)
+    //removing task
+    taskList.addEventListener('click', removeTask)
 }
 
 function addTask(e){
@@ -23,6 +27,12 @@ function addTask(e){
         taskList.appendChild(li)
         taskInput.value = ''
         e.preventDefault()
+    }
+}
+
+removeTask = e => {
+    if(e.target.parentElement.classList.contains('delete-item')){
+        e.target.parentElement.parentElement.remove()
     }
 }
 
