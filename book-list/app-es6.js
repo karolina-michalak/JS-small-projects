@@ -45,6 +45,23 @@ class UI {
     }
 }
 
+class Store {
+    static getBooks() {
+
+    }
+
+    static displayBooks() {
+
+    }
+
+    static addBook() {
+
+    }
+
+    static removeBook() {
+
+    }
+}
 
 document.getElementById('book-form').addEventListener('submit',
     function (e) {
