@@ -9,23 +9,25 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
     <style>
-        .success,
-        .error {
-            color: white;
-            padding: 5px;
-            margin: 5px 0 15px 0;
-        }
-
-        .success {
-            background: green;
-        }
-
-        .error {
-            background: red;
-        }
-
         div .btn {
             background: rgb(116, 226, 221);
+        }
+
+        .alert {
+            z-index: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 40px;
+            margin: -20px 0 0 -150px;
+            display: none;
+        }
+
+        .close {
+            position: relative;
+            top: -60%;
+            left: 0
         }
     </style>
     <title>Book List</title>
@@ -33,6 +35,18 @@
 
 <body>
     <div class="container">
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            Book added
+        </div>
+        <div class="alert alert-warning" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            Please fill in all the fields
+        </div>
         <h1>Add book</h1>
         <form id="book-form">
             <div>

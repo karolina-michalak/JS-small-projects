@@ -95,11 +95,11 @@ document.getElementById('book-form').addEventListener('submit',
         const ui = new UI();
 
         if (title === '' || author === '' || isbn === '') {
-            ui.showAlert('Please fill in all the fields', 'error')
+            document.querySelector('.alert-warning').style.display = 'block'
         } else {
             ui.addBookToList(book)
             Store.addBook(book)
-            ui.showAlert('Book added', 'success')
+            document.querySelector('.alert-success').style.display = 'block'
             ui.clearFields()
         }
     })
@@ -109,5 +109,4 @@ document.getElementById('book-list').addEventListener('click', function (e) {
     const ui = new UI();
     ui.deleteBook(e.target);
     Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
-    ui.showAlert('Book removed', 'success')
 })
