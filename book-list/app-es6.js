@@ -108,6 +108,6 @@ document.getElementById('book-list').addEventListener('click', function (e) {
     e.preventDefault();
     const ui = new UI();
     ui.deleteBook(e.target);
-    Store.removeBook(e.target.parentElement.parentElementSibling.textContent);
+    Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
     ui.showAlert('Book removed', 'success')
 })
