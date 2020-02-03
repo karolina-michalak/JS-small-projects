@@ -57,7 +57,11 @@ class Store {
     }
 
     static displayBooks() {
-
+        const books = Store.getBooks();
+        books.forEach(function (book) {
+            const ui = new UI;
+            ui.addBookToList(book);
+        })
     }
 
     static addBook(book) {
@@ -70,6 +74,8 @@ class Store {
 
     }
 }
+
+document.addEventListener('DOMContentLoaded', Store.displayBooks)
 
 document.getElementById('book-form').addEventListener('submit',
     function (e) {
