@@ -58,8 +58,8 @@ document.getElementById('book-form').addEventListener('submit',
             ui.clearFields()
         }
 
-        ui.addBookToList(book)
-        ui.clearFields()
+        // ui.addBookToList(book)
+        // ui.clearFields()
         e.preventDefault()
 
     })
