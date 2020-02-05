@@ -4,14 +4,15 @@
     box-sizing: border-box;
 }
 
-.slide {
-    display: none
+.slider-container {
+    display: flex;
+    width: 100%;
+    overflow: hidden
 }
 
 img {
     height: 100vh;
-    width: 100%;
-    position: absolute;
+    width: 100vw;
 }
 
 .prev,
