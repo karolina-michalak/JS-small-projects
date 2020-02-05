@@ -1,7 +1,9 @@
+let slides = document.querySelectorAll('.slide');
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
 let slideIndex = 0;
 
-showSlides = () => {
-    const slides = document.getElementsByClassName("slide");
+changePhoto = () => {
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = 'none';
     }
@@ -10,7 +12,17 @@ showSlides = () => {
         slideIndex = 1
     }
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 5000);
+    setTimeout(changePhoto, 10000);
 }
 
-showSlides()
+prev.addEventListener('click', () => {
+    slideIndex -= 1;
+    changePhoto()
+})
+
+next.addEventListener('click', () => {
+    slideIndex += 1;
+    changePhoto()
+})
+
+window.onload = changePhoto
