@@ -4,13 +4,8 @@
     box-sizing: border-box;
 }
 
-
 .slide {
     display: none
-}
-
-.slide1 {
-    display: block;
 }
 
 img {
@@ -18,8 +13,6 @@ img {
     width: 100%;
     position: absolute;
 }
-
-
 
 .prev,
 .next {
@@ -41,7 +34,6 @@ img {
     left: 0;
     padding: 0 0 0 30px;
 }
-
 
 .next {
     top: 50%;
