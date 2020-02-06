@@ -1,9 +1,7 @@
-const img = document.querySelectorAll('img');
-const container = document.querySelector('.container');
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
+const img = document.querySelectorAll('img');
 let index = 0;
-
 
 changeImage = () => {
     if (index > img.length - 1) {
